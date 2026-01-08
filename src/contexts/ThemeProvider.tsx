@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
 type Theme = 'dark' | 'light';
 
@@ -25,7 +26,7 @@ export function ThemeProvider({ children, defaultTheme = 'dark' }: ThemeProvider
     if (htmlClass.contains('light')) {
       return 'light';
     }
-    
+
     // localStorage에서 저장된 테마 읽기
     const stored = localStorage.getItem('theme') as Theme | null;
     if (stored && (stored === 'dark' || stored === 'light')) {
@@ -41,20 +42,20 @@ export function ThemeProvider({ children, defaultTheme = 'dark' }: ThemeProvider
   useEffect(() => {
     const root = document.documentElement;
     const bgColor = theme === 'dark' ? '#0a0a0a' : '#ffffff';
-    
+
     // 테마 클래스 변경
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
-    
+
     // 배경색 즉시 업데이트 (transition 전에)
     root.style.backgroundColor = bgColor;
     if (document.body) {
       document.body.style.backgroundColor = bgColor;
     }
-    
+
     // localStorage 저장
     localStorage.setItem('theme', theme);
-    
+
     // 테마 로드 완료 표시 (CSS transition 활성화)
     if (!root.classList.contains('theme-loaded')) {
       root.classList.add('theme-loaded');
@@ -83,4 +84,3 @@ export function useTheme() {
   }
   return context;
 }
-
