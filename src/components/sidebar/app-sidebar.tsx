@@ -19,6 +19,7 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@radix-ui/react-collapsible';
+import { useTheme } from '@/contexts/ThemeProvider';
 
 // Menu items.
 const items = [
@@ -44,6 +45,8 @@ const items = [
 
 export function AppSidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
 
   const subItems = (subItems: { title: string; url: string; icon: LucideIcon }[]) => {
     return (
@@ -69,7 +72,11 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="relative py-4 flex items-center justify-center">
         <Link to="/" className="flex flex-row items-center gap-2">
-          <svg xmlns="@/assets/shadcn-study.svg" viewBox="0 0 256 256" className="size-7" />
+          <object
+            type="image/svg+xml"
+            data={isDark ? '/shadcn-study-dark.svg' : '/shadcn-study-light.svg'}
+            className="size-7"
+          />
           <div className="font-black text-2xl">Shadcn-Study</div>
         </Link>
       </SidebarHeader>
