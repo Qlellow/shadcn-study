@@ -31,12 +31,12 @@ const ComponentsPage = () => {
   }, [searchQuery, selectedCategory]);
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
+      <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-8">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">컴포넌트 둘러보기</h1>
-          <p className="text-muted-foreground">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">컴포넌트 둘러보기</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">
             shadcn/ui 라이브러리를 이용해, 다양한 컴포넌트들을 확인하고 실습해보았어요!
           </p>
         </div>
@@ -56,35 +56,36 @@ const ComponentsPage = () => {
           </div>
 
           {/* Category Filter and View Mode */}
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm font-medium text-muted-foreground">카테고리:</span>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">카테고리:</span>
               {categories.map(category => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? 'default' : 'outline'}
                   size="sm"
+                  className="text-xs sm:text-sm"
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category === 'all' ? '전체' : category}
                 </Button>
               ))}
             </div>
-            <div className="ml-auto flex items-center gap-2">
-              <span className="text-sm font-medium text-muted-foreground">보기:</span>
+            <div className="flex items-center gap-2 sm:ml-auto">
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">보기:</span>
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setViewMode('grid')}
               >
-                <Grid3x3 className="size-4" />
+                <Grid3x3 className="size-3 sm:size-4" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setViewMode('list')}
               >
-                <List className="size-4" />
+                <List className="size-3 sm:size-4" />
               </Button>
             </div>
           </div>
@@ -109,7 +110,9 @@ const ComponentsPage = () => {
         ) : (
           <div
             className={
-              viewMode === 'grid' ? 'grid md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'
+              viewMode === 'grid'
+                ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6'
+                : 'space-y-4'
             }
           >
             {filteredComponents.map((component, index) => {
@@ -136,16 +139,16 @@ const ComponentCard = ({ component, Icon, viewMode }: ComponentCardProps) => {
     return (
       <Link
         to={component.path}
-        className="group flex items-center gap-4 p-6 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-all hover:border-primary/50"
+        className="group flex items-center gap-3 sm:gap-4 p-4 sm:p-6 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-all hover:border-primary/50"
       >
         <div
-          className={`size-16 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 ${component.color}`}
+          className={`size-12 sm:size-16 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 ${component.color}`}
         >
-          <Icon className="size-8" />
+          <Icon className="size-6 sm:size-8" />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-3 mb-2">
-            <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+          <div className="flex items-center gap-2 sm:gap-3 mb-2">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold group-hover:text-primary transition-colors">
               {component.name}
             </h3>
             {component.category && (
@@ -176,17 +179,17 @@ const ComponentCard = ({ component, Icon, viewMode }: ComponentCardProps) => {
   return (
     <Link
       to={component.path}
-      className="group block p-6 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-all hover:border-primary/50 h-full"
+      className="group block p-4 sm:p-6 rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-all hover:border-primary/50 h-full"
     >
       <div className="flex flex-col h-full">
         <div
-          className={`size-16 rounded-lg bg-primary/10 flex items-center justify-center mb-4 ${component.color}`}
+          className={`size-12 sm:size-16 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 ${component.color}`}
         >
-          <Icon className="size-8" />
+          <Icon className="size-6 sm:size-8" />
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
-            <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+            <h3 className="text-base sm:text-lg md:text-xl font-semibold group-hover:text-primary transition-colors">
               {component.name}
             </h3>
             <ArrowRight className="size-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all ml-auto" />

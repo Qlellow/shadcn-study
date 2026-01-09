@@ -27,7 +27,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {!isHome && !isComponents && <Header />}
           {children}
         </main>
-        <div className="absolute top-6 right-10 z-10">
+        <div className="absolute top-4 right-4 md:top-6 md:right-10 z-10">
           <ModeToggle />
         </div>
       </SidebarProvider>

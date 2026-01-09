@@ -12,15 +12,17 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <header className="w-full h-25 flex flex-row items-center justify-between px-12 py-6 border-b border-border bg-background">
+    <header className="w-full h-auto flex flex-row items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6 border-b border-border bg-background">
       <div className="w-full flex items-center justify-center">
         {componentInfo && typeof componentInfo === 'object' && 'name' in componentInfo && (
-          <div className="text-primary text-sm font-medium flex flex-col gap-1 items-center">
-            <div className="p-6 flex items-center max-w-fit gap-2 bg-primary/10 dark:bg-primary/10 px-3 py-1.5 rounded-md">
-              <componentInfo.icon className="size-4" />
-              <span className="text-sm font-medium">{componentInfo.name}</span>
+          <div className="text-primary text-xs sm:text-sm font-medium flex flex-col gap-1 items-center">
+            <div className="flex items-center max-w-fit gap-2 bg-primary/10 dark:bg-primary/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md">
+              <componentInfo.icon className="size-3 sm:size-4" />
+              <span className="text-xs sm:text-sm font-medium">{componentInfo.name}</span>
             </div>
-            <span className="text-sm text-muted-foreground">{componentInfo.description}</span>
+            <span className="text-xs sm:text-sm text-muted-foreground text-center px-2">
+              {componentInfo.description}
+            </span>
           </div>
         )}
       </div>

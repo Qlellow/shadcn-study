@@ -183,9 +183,9 @@ export const markdownComponents: Components = {
 
   // 테이블
   table: ({ children, className, ...props }) => (
-    <div className="overflow-x-auto my-4">
+    <div className="overflow-x-auto my-4 -mx-2 sm:mx-0">
       <table
-        className={cn('w-full border-collapse border border-border rounded-lg', className)}
+        className={cn('w-full border-collapse border border-border rounded-lg min-w-[640px]', className)}
         {...props}
       >
         {children}
