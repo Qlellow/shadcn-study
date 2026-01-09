@@ -74,7 +74,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="relative py-4 flex flex-row items-center justify-start gap-2">
+      <SidebarHeader className="pointer-events-none select-none relative py-4 flex flex-row items-center justify-start gap-2">
         <Button size="icon-sm" className="size-8 dark:bg-transparent" asChild>
           <img src={isDark ? LogoDark : LogoLight} alt="logo" className="size-8" />
         </Button>
@@ -97,7 +97,7 @@ export function AppSidebar() {
                   <SidebarMenuItem key={item.title}>
                     {item.subItems && item.subItems.length > 0 ? (
                       <CollapsibleTrigger asChild className="w-full">
-                        <SidebarMenuButton>
+                        <SidebarMenuButton tooltip={item.title}>
                           <item.icon />
                           <span>{item.title}</span>
                           <ChevronRight
@@ -108,7 +108,7 @@ export function AppSidebar() {
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                     ) : (
-                      <SidebarMenuButton asChild>
+                      <SidebarMenuButton tooltip={item.title} asChild>
                         <Link to={item.url}>
                           <item.icon />
                           <span>{item.title}</span>
