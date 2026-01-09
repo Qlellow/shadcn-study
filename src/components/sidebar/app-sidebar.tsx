@@ -56,10 +56,10 @@ export function AppSidebar() {
           {subItems.map((subItem: { title: string; url: string; icon: LucideIcon }) => (
             <SidebarMenuSubItem key={subItem.title}>
               <SidebarMenuSubButton asChild>
-                <a href={subItem.url}>
+                <Link to={subItem.url}>
                   <subItem.icon />
                   <span>{subItem.title}</span>
-                </a>
+                </Link>
               </SidebarMenuSubButton>
             </SidebarMenuSubItem>
           ))}

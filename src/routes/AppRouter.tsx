@@ -7,9 +7,12 @@ import SonnerPage from '@/pages/components/sonner/page';
 import TablePage from '@/pages/components/table/page';
 import ButtonPage from '@/pages/components/button/page';
 import SkeletonPage from '@/pages/components/skeleton/page';
+import ScrollToTop from '@/components/ScrollToTop';
+
 const AppRouter = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout children={<HomePage />} />} />
         <Route path="/components" element={<Layout children={<ComponentsPage />} />} />

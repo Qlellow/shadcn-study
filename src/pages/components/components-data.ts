@@ -21,7 +21,7 @@ export const componentsData: ComponentInfo[] = [
     path: '/components/button',
     icon: MousePointer2,
     color: 'text-purple-500',
-    category: 'Buttons',
+    category: 'MainUI',
     tags: ['button', 'form', 'click'],
   },
   {
@@ -31,7 +31,7 @@ export const componentsData: ComponentInfo[] = [
     path: '/components/table',
     icon: Table2,
     color: 'text-blue-500',
-    category: 'Tables',
+    category: 'Data Display',
     tags: ['table', 'data', 'sorting', 'filtering'],
   },
   {
@@ -49,7 +49,7 @@ export const componentsData: ComponentInfo[] = [
     path: '/components/skeleton',
     icon: Loader2,
     color: 'text-yellow-500',
-    category: 'Skeletons',
+    category: 'Loading',
     tags: ['skeleton', 'loading', 'placeholder'],
   },
 ];
