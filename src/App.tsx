@@ -4,8 +4,8 @@ import AppRouter from '@/routes/AppRouter';
 
 function App() {
   return (
-    <ThemeProvider>
-      <div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="antialiased">
         <Toaster position="top-center" />
         <AppRouter />
       </div>

@@ -1,4 +1,4 @@
-import { Table2, Bell, type LucideIcon, MousePointer2 } from 'lucide-react';
+import { Table2, Bell, type LucideIcon, MousePointer2, Loader2 } from 'lucide-react';
 
 export interface ComponentInfo {
   name: string;
@@ -21,7 +21,7 @@ export const componentsData: ComponentInfo[] = [
     path: '/components/button',
     icon: MousePointer2,
     color: 'text-purple-500',
-    category: 'Form',
+    category: 'Buttons',
     tags: ['button', 'form', 'click'],
   },
   {
@@ -31,7 +31,7 @@ export const componentsData: ComponentInfo[] = [
     path: '/components/table',
     icon: Table2,
     color: 'text-blue-500',
-    category: 'Data Display',
+    category: 'Tables',
     tags: ['table', 'data', 'sorting', 'filtering'],
   },
   {
@@ -40,7 +40,16 @@ export const componentsData: ComponentInfo[] = [
     path: '/components/sonner',
     icon: Bell,
     color: 'text-green-500',
-    category: 'Feedback',
+    category: 'Notifications',
     tags: ['toast', 'notification', 'alert'],
+  },
+  {
+    name: 'Skeleton',
+    description: 'Skeleton 컴포넌트 실습. 로딩 상태를 표시할 수 있습니다.',
+    path: '/components/skeleton',
+    icon: Loader2,
+    color: 'text-yellow-500',
+    category: 'Skeletons',
+    tags: ['skeleton', 'loading', 'placeholder'],
   },
 ];

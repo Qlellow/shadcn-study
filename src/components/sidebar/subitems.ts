@@ -1,4 +1,4 @@
-import { Bell, MousePointer2, Table2 } from 'lucide-react';
+import { Bell, Loader2, MousePointer2, Table2 } from 'lucide-react';
 
 export const componentsSubItems = [
   {
@@ -15,5 +15,10 @@ export const componentsSubItems = [
     title: 'Table',
     url: '/components/table',
     icon: Table2,
+  },
+  {
+    title: 'Skeleton',
+    url: '/components/skeleton',
+    icon: Loader2,
   },
 ];

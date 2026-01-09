@@ -1,76 +1,72 @@
-import { useEffect, useState } from 'react';
-import { columns, type Payment } from './columns';
-import { DataTable } from './data-table';
 import ComponentsLayout from '@/pages/components/layout';
+import { TableWrapper } from '@/components/table/Table';
+import BasicTable from '@/components/table/BasicTable';
+import TableWithFooter from '@/components/table/TableWithFooter';
+import SimpleTable from '@/components/table/SimpleTable';
+import TableWithBadges from '@/components/table/TableWithBadges';
+import TableWithActions from '@/components/table/TableWithActions';
+import TableWithSelect from '@/components/table/TableWithSelect';
+import TableWithInput from '@/components/table/TableWithInput';
+import DataTable from '@/components/table/DataTable';
 
-const getData = async (): Promise<Payment[]> => {
-  // Fetch data from your API here.
-  return [
-    {
-      id: 'm5gr84i9',
-      amount: 316,
-      status: 'success',
-      email: 'ken99@example.com',
-    },
-    {
-      id: '3u1reuv4',
-      amount: 242,
-      status: 'success',
-      email: 'Abe45@example.com',
-    },
-    {
-      id: 'derv1ws0',
-      amount: 837,
-      status: 'processing',
-      email: 'Monserrat44@example.com',
-    },
-    {
-      id: '5kma53ae',
-      amount: 874,
-      status: 'success',
-      email: 'Silas22@example.com',
-    },
-    {
-      id: 'bhqecj4p',
-      amount: 721,
-      status: 'failed',
-      email: 'carmella@example.com',
-    },
-  ];
-};
+const invoices = [
+  {
+    invoice: 'INV001',
+    paymentStatus: 'Paid',
+    totalAmount: '$250.00',
+    paymentMethod: 'Credit Card',
+  },
+  {
+    invoice: 'INV002',
+    paymentStatus: 'Pending',
+    totalAmount: '$150.00',
+    paymentMethod: 'PayPal',
+  },
+  {
+    invoice: 'INV003',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$350.00',
+    paymentMethod: 'Bank Transfer',
+  },
+  {
+    invoice: 'INV004',
+    paymentStatus: 'Paid',
+    totalAmount: '$450.00',
+    paymentMethod: 'Credit Card',
+  },
+  {
+    invoice: 'INV005',
+    paymentStatus: 'Paid',
+    totalAmount: '$550.00',
+    paymentMethod: 'PayPal',
+  },
+  {
+    invoice: 'INV006',
+    paymentStatus: 'Pending',
+    totalAmount: '$200.00',
+    paymentMethod: 'Bank Transfer',
+  },
+  {
+    invoice: 'INV007',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$300.00',
+    paymentMethod: 'Credit Card',
+  },
+];
 
 const TablePage = () => {
-  const [data, setData] = useState<Payment[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getData();
-        setData(result);
-      } catch (error) {
-        console.error('Failed to fetch data:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="container mx-auto py-10">
-        <div>Loading...</div>
-      </div>
-    );
-  }
-
   return (
     <ComponentsLayout>
-      <div className="container max-w-lg py-10">
-        <DataTable columns={columns} data={data} />
-      </div>
+      <TableWrapper>
+        <BasicTable invoices={invoices} />
+        <TableWithFooter invoices={invoices} />
+        <SimpleTable />
+        <TableWithBadges />
+        <TableWithActions />
+        <TableWithSelect />
+        <TableWithInput />
+        <DataTable />
+      </TableWrapper>
     </ComponentsLayout>
   );
 };

@@ -6,6 +6,7 @@ import ComponentsPage from '@/pages/components/page';
 import SonnerPage from '@/pages/components/sonner/page';
 import TablePage from '@/pages/components/table/page';
 import ButtonPage from '@/pages/components/button/page';
+import SkeletonPage from '@/pages/components/skeleton/page';
 const AppRouter = () => {
   return (
     <Router>
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route path="/components/button" element={<Layout children={<ButtonPage />} />} />
         <Route path="/components/sonner" element={<Layout children={<SonnerPage />} />} />
         <Route path="/components/table" element={<Layout children={<TablePage />} />} />
+        <Route path="/components/skeleton" element={<Layout children={<SkeletonPage />} />} />
       </Routes>
     </Router>
   );

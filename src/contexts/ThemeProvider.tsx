@@ -1,86 +1,72 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'dark' | 'light';
+type Theme = 'dark' | 'light' | 'system';
 
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-  setTheme: (theme: Theme) => void;
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-interface ThemeProviderProps {
-  children: ReactNode;
+type ThemeProviderProps = {
+  children: React.ReactNode;
   defaultTheme?: Theme;
-}
+  storageKey?: string;
+};
 
-export function ThemeProvider({ children, defaultTheme = 'dark' }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    // HTML에서 이미 적용된 테마 클래스 확인 (FOUC 방지)
-    const htmlClass = document.documentElement.classList;
-    if (htmlClass.contains('dark')) {
-      return 'dark';
-    }
-    if (htmlClass.contains('light')) {
-      return 'light';
-    }
+type ThemeProviderState = {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+};
 
-    // localStorage에서 저장된 테마 읽기
-    const stored = localStorage.getItem('theme') as Theme | null;
-    if (stored && (stored === 'dark' || stored === 'light')) {
-      return stored;
-    }
-    // 시스템 설정 확인
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return defaultTheme;
-  });
+const initialState: ThemeProviderState = {
+  theme: 'system',
+  setTheme: () => null,
+};
+
+const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
+
+export function ThemeProvider({
+  children,
+  defaultTheme = 'system',
+  storageKey = 'vite-ui-theme',
+  ...props
+}: ThemeProviderProps) {
+  const [theme, setTheme] = useState<Theme>(
+    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+  );
 
   useEffect(() => {
-    const root = document.documentElement;
-    const bgColor = theme === 'dark' ? '#0a0a0a' : '#ffffff';
+    const root = window.document.documentElement;
 
-    // 테마 클래스 변경
     root.classList.remove('light', 'dark');
+
+    if (theme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+
+      root.classList.add(systemTheme);
+      return;
+    }
+
     root.classList.add(theme);
-
-    // 배경색 즉시 업데이트 (transition 전에)
-    root.style.backgroundColor = bgColor;
-    if (document.body) {
-      document.body.style.backgroundColor = bgColor;
-    }
-
-    // localStorage 저장
-    localStorage.setItem('theme', theme);
-
-    // 테마 로드 완료 표시 (CSS transition 활성화)
-    if (!root.classList.contains('theme-loaded')) {
-      root.classList.add('theme-loaded');
-    }
   }, [theme]);
 
-  const toggleTheme = () => {
-    setThemeState(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
+  const value = {
+    theme,
+    setTheme: (theme: Theme) => {
+      localStorage.setItem(storageKey, theme);
+      setTheme(theme);
+    },
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
+    <ThemeProviderContext.Provider {...props} value={value}>
       {children}
-    </ThemeContext.Provider>
+    </ThemeProviderContext.Provider>
   );
 }
 
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
+export const useTheme = () => {
+  const context = useContext(ThemeProviderContext);
+
+  if (context === undefined) throw new Error('useTheme must be used within a ThemeProvider');
+
   return context;
-}
+};
