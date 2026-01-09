@@ -5,6 +5,7 @@ import { changelogData } from './changelog-data';
 import ComponentsLayout from '@/pages/components/layout';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { markdownComponents } from '@/components/markdown/MarkdownComponents';
 
 const ChangelogPage = () => {
   // 각 버전의 열림 상태를 독립적으로 관리
@@ -75,40 +76,7 @@ const ChangelogPage = () => {
                   </CollapsibleTrigger>
                   <CollapsibleContent className="px-4 pb-4 w-full">
                     <div className="pt-2 prose prose-sm dark:prose-invert max-w-none">
-                      <ReactMarkdown
-                        components={{
-                          h3: ({ children }) => (
-                            <h3 className="text-lg font-semibold mt-4 mb-2">{children}</h3>
-                          ),
-                          ul: ({ children }) => (
-                            <ul className="list-disc list-outside space-y-1 my-2 ml-6">
-                              {children}
-                            </ul>
-                          ),
-                          li: ({ children }) => (
-                            <li className="text-muted-foreground pl-2">{children}</li>
-                          ),
-                          p: ({ children }) => <p className="my-2">{children}</p>,
-                          code: ({ children }) => (
-                            <code className="px-1.5 py-0.5 rounded bg-muted text-sm font-mono">
-                              {children}
-                            </code>
-                          ),
-                          strong: ({ children }) => (
-                            <strong className="font-semibold text-foreground">{children}</strong>
-                          ),
-                          a: ({ href, children }) => (
-                            <a
-                              href={href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary hover:underline"
-                            >
-                              {children}
-                            </a>
-                          ),
-                        }}
-                      >
+                      <ReactMarkdown components={markdownComponents}>
                         {release.content}
                       </ReactMarkdown>
                     </div>

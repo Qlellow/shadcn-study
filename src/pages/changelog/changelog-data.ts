@@ -12,8 +12,8 @@ export const changelogData: ChangelogRelease[] = [
     version: '1.0.0',
     date: '2025-01-15',
     isLatest: true,
-    content: `## 주요 변경사항
-
+    content: `
+## 주요 변경사항
 ### 새로운 기능
 * **테이블 컴포넌트 분리**: 모든 테이블 컴포넌트를 개별 파일로 분리하여 유지보수성 향상
 * **변경사항 페이지 추가**: 프로젝트의 변경사항을 추적할 수 있는 Changelog 페이지 추가
