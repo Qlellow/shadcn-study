@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronRight, Grid3x3, Home, type LucideIcon } from 'lucide-react';
+import { ChevronRight, Grid3x3, Home, GitBranch, type LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { componentsSubItems } from '@/components/sidebar/subitems';
 
@@ -42,6 +42,12 @@ const items = [
         icon: subItem.icon as LucideIcon,
       })),
     ],
+  },
+  {
+    title: 'Changelog',
+    url: '/changelog',
+    icon: GitBranch,
+    subItems: [],
   },
 ];
 

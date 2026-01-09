@@ -7,6 +7,7 @@ import SonnerPage from '@/pages/components/sonner/page';
 import TablePage from '@/pages/components/table/page';
 import ButtonPage from '@/pages/components/button/page';
 import SkeletonPage from '@/pages/components/skeleton/page';
+import ChangelogPage from '@/pages/changelog/page';
 import ScrollToTop from '@/components/ScrollToTop';
 
 const AppRouter = () => {
@@ -20,6 +21,7 @@ const AppRouter = () => {
         <Route path="/components/sonner" element={<Layout children={<SonnerPage />} />} />
         <Route path="/components/table" element={<Layout children={<TablePage />} />} />
         <Route path="/components/skeleton" element={<Layout children={<SkeletonPage />} />} />
+        <Route path="/changelog" element={<Layout children={<ChangelogPage />} />} />
       </Routes>
     </Router>
   );
