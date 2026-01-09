@@ -1,5 +1,5 @@
 import ComponentsLayout from '@/pages/components/layout';
-import { TableWrapper } from '@/components/table/Table';
+import ComponentWrapper from '@/components/ComponentWrapper/CompnentWrapper';
 import BasicTable from '@/components/table/BasicTable';
 import TableWithFooter from '@/components/table/TableWithFooter';
 import SimpleTable from '@/components/table/SimpleTable';
@@ -57,7 +57,7 @@ const invoices = [
 const TablePage = () => {
   return (
     <ComponentsLayout>
-      <TableWrapper>
+      <ComponentWrapper>
         <BasicTable invoices={invoices} />
         <TableWithFooter invoices={invoices} />
         <SimpleTable />
@@ -66,7 +66,7 @@ const TablePage = () => {
         <TableWithSelect />
         <TableWithInput />
         <DataTable />
-      </TableWrapper>
+      </ComponentWrapper>
     </ComponentsLayout>
   );
 };
