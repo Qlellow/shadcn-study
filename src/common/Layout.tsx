@@ -1,4 +1,4 @@
-import { SidebarProvider } from '@/components/ui/sidebar';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/components/sidebar/app-sidebar';
 import type { LayoutProps } from '@/global/types';
 
@@ -24,6 +24,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <SidebarProvider>
         <AppSidebar />
         <main className="w-full flex min-h-svh flex-col items-center gap-6 bg-background text-foreground">
+          {/* 모바일 사이드바 트리거 버튼 */}
+          <div className="fixed top-4 left-4 z-50 md:hidden">
+            <SidebarTrigger />
+          </div>
           {!isHome && !isComponents && <Header />}
           {children}
         </main>

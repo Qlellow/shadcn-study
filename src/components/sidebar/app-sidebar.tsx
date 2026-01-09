@@ -127,7 +127,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarTrigger className="absolute top-4 sm:top-7 -right-8 sm:-right-10 z-10" />
+      <SidebarTrigger className="absolute top-4 sm:top-7 -right-8 sm:-right-10 z-10 hidden md:flex" />
     </Sidebar>
   );
 }
