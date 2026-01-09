@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { columns, type Payment } from './columns';
 import { DataTable } from './data-table';
+import ComponentsLayout from '@/pages/components/layout';
 
 const getData = async (): Promise<Payment[]> => {
   // Fetch data from your API here.
@@ -66,9 +67,11 @@ const TablePage = () => {
   }
 
   return (
-    <div className="container max-w-lg py-10">
-      <DataTable columns={columns} data={data} />
-    </div>
+    <ComponentsLayout>
+      <div className="container max-w-lg py-10">
+        <DataTable columns={columns} data={data} />
+      </div>
+    </ComponentsLayout>
   );
 };
 

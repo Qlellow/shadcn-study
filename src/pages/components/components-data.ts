@@ -16,6 +16,15 @@ export interface ComponentInfo {
  */
 export const componentsData: ComponentInfo[] = [
   {
+    name: 'Button',
+    description: '버튼 컴포넌트 실습. 버튼의 다양한 스타일과 기능을 제공합니다.',
+    path: '/components/button',
+    icon: MousePointer2,
+    color: 'text-purple-500',
+    category: 'Form',
+    tags: ['button', 'form', 'click'],
+  },
+  {
     name: 'Table',
     description:
       'TanStack Table을 활용한 데이터 테이블 컴포넌트. 정렬, 필터링, 페이지네이션 기능을 제공합니다.',
@@ -33,14 +42,5 @@ export const componentsData: ComponentInfo[] = [
     color: 'text-green-500',
     category: 'Feedback',
     tags: ['toast', 'notification', 'alert'],
-  },
-  {
-    name: 'Button',
-    description: '버튼 컴포넌트 실습. 버튼의 다양한 스타일과 기능을 제공합니다.',
-    path: '/components/button',
-    icon: MousePointer2,
-    color: 'text-purple-500',
-    category: 'Form',
-    tags: ['button', 'form', 'click'],
   },
 ];

@@ -20,9 +20,7 @@ import {
 } from '@/components/ui/sidebar';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@radix-ui/react-collapsible';
 
-import { useTheme } from '@/contexts/ThemeProvider';
-import LogoDark from '@/assets/shadcn-study-dark.png';
-import LogoLight from '@/assets/shadcn-study-light.png';
+import Logo from '@/assets/shadcn-study-logo.png';
 import { Button } from '../ui/button';
 
 // Menu items.
@@ -49,8 +47,6 @@ const items = [
 
 export function AppSidebar() {
   const [isOpen, setIsOpen] = useState(true);
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
 
   const subItems = (subItems: { title: string; url: string; icon: LucideIcon }[]) => {
     return (
@@ -74,9 +70,9 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="pointer-events-none select-none relative py-4 flex flex-row items-center justify-start gap-2">
-        <Button size="icon-sm" className="size-8 dark:bg-transparent" asChild>
-          <img src={isDark ? LogoDark : LogoLight} alt="logo" className="size-8" />
+      <SidebarHeader className="pointer-events-none select-none relative py-4 flex flex-row items-center justify-start">
+        <Button size="icon-sm" className="size-8 dark:bg-transparent p-1.5" asChild>
+          <img src={Logo} alt="logo" className="size-8" />
         </Button>
         <div className="grid grid-cols-2 text-left text-2xl font-black leading-tight items-center">
           <span className="truncate text-primary">shadcn</span>

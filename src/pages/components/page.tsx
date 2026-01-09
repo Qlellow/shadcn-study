@@ -37,7 +37,7 @@ const ComponentsPage = () => {
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">컴포넌트 둘러보기</h1>
           <p className="text-muted-foreground">
-            shadcn/ui로 구현한 다양한 컴포넌트들을 확인하고 실습해보세요
+            shadcn/ui 라이브러리를 이용해, 다양한 컴포넌트들을 확인하고 실습해보았어요!
           </p>
         </div>
 

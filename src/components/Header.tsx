@@ -1,30 +1,14 @@
 import { memo, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { Button } from '@/components/ui/button';
 import { componentsData } from '@/pages/components/components-data';
-import { useTheme } from '@/contexts/ThemeProvider';
-
-import { Moon, Sun } from 'lucide-react';
-
 const Header = () => {
-  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
-
-  const isDark = theme === 'dark';
 
   // 현재 페이지 이름 가져오기
   const componentInfo = useMemo(() => {
     if (location.pathname === '/') return null;
-
-    // components-data에서 경로로 찾기
-    const component = componentsData.find(comp => comp.path === location.pathname);
-    if (component) return component;
-
-    // 직접 매핑 (components 페이지 등)
-    const pathMap: Record<string, string> = {};
-
-    return pathMap[location.pathname] || null;
+    return componentsData.find(comp => comp.path === location.pathname);
   }, [location.pathname]);
 
   return (
@@ -40,14 +24,6 @@ const Header = () => {
           </div>
         )}
       </div>
-      <Button
-        variant="sidebar"
-        size="icon"
-        onClick={toggleTheme}
-        className="absolute top-6 right-10 z-10"
-      >
-        {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
-      </Button>
     </header>
   );
 };
