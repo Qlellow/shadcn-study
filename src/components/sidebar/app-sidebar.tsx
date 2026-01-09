@@ -19,7 +19,11 @@ import {
   SidebarTrigger,
 } from '@/components/ui/sidebar';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@radix-ui/react-collapsible';
+
 import { useTheme } from '@/contexts/ThemeProvider';
+import LogoDark from '@/assets/shadcn-study-dark.png';
+import LogoLight from '@/assets/shadcn-study-light.png';
+import { Button } from '../ui/button';
 
 // Menu items.
 const items = [
@@ -69,16 +73,15 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar>
-      <SidebarHeader className="relative py-4 flex items-center justify-center">
-        <Link to="/" className="flex flex-row items-center gap-2">
-          <object
-            type="image/svg+xml"
-            data={isDark ? '/shadcn-study-dark.svg' : '/shadcn-study-light.svg'}
-            className="size-7"
-          />
-          <div className="font-black text-2xl">Shadcn-Study</div>
-        </Link>
+    <Sidebar collapsible="icon">
+      <SidebarHeader className="relative py-4 flex flex-row items-center justify-start gap-2">
+        <Button size="icon-sm" className="size-8 dark:bg-transparent" asChild>
+          <img src={isDark ? LogoDark : LogoLight} alt="logo" className="size-8" />
+        </Button>
+        <div className="grid grid-cols-2 text-left text-2xl font-black leading-tight items-center">
+          <span className="truncate text-primary">shadcn</span>
+          <span className="truncate text-primary/50">Study</span>
+        </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
