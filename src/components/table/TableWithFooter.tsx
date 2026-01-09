@@ -8,12 +8,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 import type { TableProps } from '@/global/types';
 
 const TableWithFooter: React.FC<TableProps> = ({ invoices }) => {
   return (
-    <TableExample title="With Footer">
+    <ComponentContainer title="With Footer">
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
@@ -41,7 +41,7 @@ const TableWithFooter: React.FC<TableProps> = ({ invoices }) => {
           </TableRow>
         </TableFooter>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 

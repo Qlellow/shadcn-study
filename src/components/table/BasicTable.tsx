@@ -4,13 +4,13 @@ import { TableHead } from '../ui/table';
 import { TableBody } from '../ui/table';
 import { TableCaption } from '../ui/table';
 import { TableHeader } from '../ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 
 import type { TableProps } from '@/global/types';
 
 const BasicTable: React.FC<TableProps> = ({ invoices }) => {
   return (
-    <TableExample title="Basic">
+    <ComponentContainer title="Basic">
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>
@@ -32,7 +32,7 @@ const BasicTable: React.FC<TableProps> = ({ invoices }) => {
           ))}
         </TableBody>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 

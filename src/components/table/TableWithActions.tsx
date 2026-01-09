@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -19,7 +19,7 @@ import { MoreHorizontal } from 'lucide-react';
 
 const TableWithActions = () => {
   return (
-    <TableExample title="With Actions">
+    <ComponentContainer title="With Actions">
       <Table>
         <TableHeader>
           <TableRow>
@@ -91,7 +91,7 @@ const TableWithActions = () => {
           </TableRow>
         </TableBody>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 

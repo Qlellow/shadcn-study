@@ -1,9 +1,9 @@
 import { Skeleton } from '@/components/ui/skeleton';
-import { SkeletonExample } from '@/components/skeleton/Skeleton';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 
 const SkeletonAvatar = () => {
   return (
-    <SkeletonExample title="Avatar">
+    <ComponentContainer title="Avatar">
       <div className="flex w-full items-center gap-4">
         <Skeleton className="size-10 shrink-0 rounded-full" />
         <div className="grid gap-2">
@@ -11,7 +11,7 @@ const SkeletonAvatar = () => {
           <Skeleton className="h-4 w-[100px]" />
         </div>
       </div>
-    </SkeletonExample>
+    </ComponentContainer>
   );
 };
 

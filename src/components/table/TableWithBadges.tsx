@@ -6,11 +6,11 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 
 const TableWithBadges = () => {
   return (
-    <TableExample title="With Badges">
+    <ComponentContainer title="With Badges">
       <Table>
         <TableHeader>
           <TableRow>
@@ -61,7 +61,7 @@ const TableWithBadges = () => {
           </TableRow>
         </TableBody>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 

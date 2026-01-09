@@ -2,11 +2,11 @@ import { CardContent, CardHeader } from '@/components/ui/card';
 
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { SkeletonExample } from '@/components/skeleton/Skeleton';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 
 const SkeletonCard = () => {
   return (
-    <SkeletonExample title="Card">
+    <ComponentContainer title="Card">
       <Card className="w-full">
         <CardHeader>
           <Skeleton className="h-4 w-2/3" />
@@ -16,7 +16,7 @@ const SkeletonCard = () => {
           <Skeleton className="aspect-square w-full" />
         </CardContent>
       </Card>
-    </SkeletonExample>
+    </ComponentContainer>
   );
 };
 

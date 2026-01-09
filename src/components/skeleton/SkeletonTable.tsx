@@ -1,9 +1,9 @@
-import { SkeletonExample } from '@/components/skeleton/Skeleton';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const SkeletonTable = () => {
   return (
-    <SkeletonExample title="Table">
+    <ComponentContainer title="Table">
       <div className="flex w-full flex-col gap-2">
         <div className="flex gap-4">
           <Skeleton className="h-4 flex-1" />
@@ -21,7 +21,7 @@ const SkeletonTable = () => {
           <Skeleton className="h-4 w-20" />
         </div>
       </div>
-    </SkeletonExample>
+    </ComponentContainer>
   );
 };
 

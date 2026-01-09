@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 import {
   Select,
   SelectContent,
@@ -18,7 +18,7 @@ import {
 
 const TableWithSelect = () => {
   return (
-    <TableExample title="With Select">
+    <ComponentContainer title="With Select">
       <Table>
         <TableHeader>
           <TableRow>
@@ -87,7 +87,7 @@ const TableWithSelect = () => {
           </TableRow>
         </TableBody>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 

@@ -6,12 +6,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 import type { TableProps } from '@/global/types';
 
 const TableWithCheckbox: React.FC<TableProps> = ({ invoices }) => {
   return (
-    <TableExample title="With Checkbox">
+    <ComponentContainer title="With Checkbox">
       <Table>
         <TableHeader>
           <TableRow>
@@ -31,7 +31,7 @@ const TableWithCheckbox: React.FC<TableProps> = ({ invoices }) => {
           ))}
         </TableBody>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 

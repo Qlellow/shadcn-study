@@ -6,11 +6,11 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableExample } from './Table';
+import ComponentContainer from '@/components/ComponentWrapper/Compnent';
 
 const SimpleTable = () => {
   return (
-    <TableExample title="Simple">
+    <ComponentContainer title="Simple">
       <Table>
         <TableHeader>
           <TableRow>
@@ -37,7 +37,7 @@ const SimpleTable = () => {
           </TableRow>
         </TableBody>
       </Table>
-    </TableExample>
+    </ComponentContainer>
   );
 };
 
