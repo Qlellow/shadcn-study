@@ -28,10 +28,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="fixed top-4 left-4 z-50 md:hidden">
             <SidebarTrigger />
           </div>
-          {!isHome && !isComponents && <Header />}
+          {!isHome && !isComponents && (
+            <>
+              <Header />
+              {/* Header가 고정되어 있으므로 공간 확보 */}
+              <div className="w-full h-20 sm:h-24 md:h-28" />
+            </>
+          )}
           {children}
         </main>
-        <div className="absolute top-4 right-4 md:top-6 md:right-10 z-10">
+        <div className="fixed top-4 right-4 md:top-6 md:right-10 z-50">
           <ModeToggle />
         </div>
       </SidebarProvider>

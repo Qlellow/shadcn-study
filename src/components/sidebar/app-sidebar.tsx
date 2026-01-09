@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronRight, Grid3x3, Home, GitBranch, type LucideIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { componentsSubItems } from '@/components/sidebar/subitems';
 
 import {
@@ -17,6 +17,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarTrigger,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@radix-ui/react-collapsible';
 
@@ -53,6 +54,15 @@ const items = [
 
 export function AppSidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const { isMobile, setOpenMobile } = useSidebar();
+  const navigate = useNavigate();
+
+  const handleLinkClick = (url: string) => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+    navigate(url);
+  };
 
   const subItems = (subItems: { title: string; url: string; icon: LucideIcon }[]) => {
     return (
@@ -62,10 +72,13 @@ export function AppSidebar() {
           {subItems.map((subItem: { title: string; url: string; icon: LucideIcon }) => (
             <SidebarMenuSubItem key={subItem.title}>
               <SidebarMenuSubButton asChild>
-                <Link to={subItem.url}>
+                <button
+                  onClick={() => handleLinkClick(subItem.url)}
+                  className="w-full flex items-center gap-2"
+                >
                   <subItem.icon />
                   <span>{subItem.title}</span>
-                </Link>
+                </button>
               </SidebarMenuSubButton>
             </SidebarMenuSubItem>
           ))}
@@ -111,10 +124,13 @@ export function AppSidebar() {
                       </CollapsibleTrigger>
                     ) : (
                       <SidebarMenuButton tooltip={item.title} asChild>
-                        <Link to={item.url}>
+                        <button
+                          onClick={() => handleLinkClick(item.url)}
+                          className="w-full flex items-center gap-2"
+                        >
                           <item.icon />
                           <span>{item.title}</span>
-                        </Link>
+                        </button>
                       </SidebarMenuButton>
                     )}
                     {item.subItems && item.subItems.length > 0 && (
