@@ -9,6 +9,33 @@ export interface ChangelogRelease {
 
 export const changelogData: ChangelogRelease[] = [
   {
+    version: '1.2.0',
+    date: '2025-01-16',
+    isLatest: true,
+    content: `## 주요 변경사항
+
+### 성능 최적화
+* **코드 스플리팅**: 모든 페이지에 React.lazy와 Suspense를 적용하여 초기 로딩 시간 단축
+* **컴포넌트 메모이제이션**: React.memo, useCallback, useMemo를 활용하여 불필요한 리렌더링 방지
+* **데이터 최적화**: 정적 데이터를 컴포넌트 외부로 이동하여 재생성 방지 (features, invoices 배열 등)
+
+### 배포 개선
+* **Vercel SPA 라우팅**: vercel.json 설정 추가로 모든 경로가 index.html로 리다이렉트되도록 구성
+* **Vercel Analytics 수정**: @vercel/analytics/next에서 @vercel/analytics/react로 변경하여 빌드 에러 해결
+
+### 개선사항
+* **ComponentsPage 최적화**: 검색, 필터링, 뷰 모드 변경 핸들러를 useCallback으로 메모이제이션
+* **HomePage 최적화**: features 배열을 컴포넌트 외부로 이동하고 components를 useMemo로 캐싱
+* **TablePage 최적화**: invoices 데이터를 컴포넌트 외부로 이동
+* **ChangelogPage 최적화**: toggleVersion 함수를 useCallback으로 메모이제이션
+* **ComponentCard 메모이제이션**: React.memo를 적용하여 리렌더링 최적화
+
+### 버그 수정
+* Vercel 배포 시 컴포넌트 하위 페이지에서 새로고침하면 404 에러가 발생하던 문제 수정
+* @vercel/analytics/next 사용으로 인한 빌드 에러 수정`,
+    contributors: ['shadcn-study'],
+  },
+  {
     version: '1.1.0',
     date: '2025-01-16',
     isLatest: true,
