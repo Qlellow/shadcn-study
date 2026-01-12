@@ -1,74 +1,167 @@
-# React + TypeScript + Vite
+# Shadcn-Study
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+shadcn/ui 라이브러리를 학습하고 실습하는 개인 프로젝트입니다. 재사용 가능한 컴포넌트들을 직접 구현하며 React와 Tailwind CSS를 마스터할 수 있습니다.
 
-Currently, two official plugins are available:
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=react&logoColor=white)
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.2.5-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.18-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 주요 기능
 
-## React Compiler
+- 🎨 **다양한 컴포넌트 실습**: Button, Table, Skeleton, Sonner 등
+- 🌓 **다크 모드 지원**: 시스템 설정 자동 감지 및 수동 전환
+- 📱 **반응형 디자인**: 모바일, 태블릿, 데스크톱 최적화
+- 🚀 **빠른 개발 환경**: Vite + React SWC로 빠른 HMR
+- 🎯 **타입 안정성**: TypeScript로 타입 안전성 보장
+- 📊 **고급 테이블 기능**: TanStack Table을 활용한 정렬, 필터링, 페이지네이션
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ 기술 스택
 
-## Expanding the ESLint configuration
+### 핵심 기술
+- **React** 19.2.0 - UI 라이브러리
+- **TypeScript** 5.9.3 - 타입 안정성
+- **Vite** 7.2.5 - 빌드 도구 (rolldown 기반)
+- **Tailwind CSS** 4.1.18 - 유틸리티 CSS 프레임워크
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 주요 라이브러리
+- **shadcn/ui** - 컴포넌트 라이브러리
+- **Radix UI** - 접근성 있는 프리미티브 컴포넌트
+- **TanStack Table** - 강력한 테이블 라이브러리
+- **React Router** 7.12.0 - 클라이언트 사이드 라우팅
+- **Sonner** - Toast 알림 컴포넌트
+- **React Markdown** - Markdown 렌더링
+- **Lucide React** - 아이콘 라이브러리
+- **next-themes** - 테마 관리
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 설치 및 실행
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 필수 요구사항
+- Node.js 18 이상
+- npm 또는 yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 설치
+
+```bash
+# 저장소 클론
+git clone <repository-url>
+
+# 디렉토리 이동
+cd shadcn
+
+# 의존성 설치
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 개발 서버 실행
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
-# shadcn-study
+
+개발 서버가 실행되면 브라우저에서 `http://localhost:5173`로 접속할 수 있습니다.
+
+### 빌드
+
+```bash
+# 프로덕션 빌드
+npm run build
+
+# 빌드 결과 미리보기
+npm run preview
+```
+
+### 린팅
+
+```bash
+npm run lint
+```
+
+## 📁 프로젝트 구조
+
+```
+src/
+├── components/          # 재사용 가능한 컴포넌트
+│   ├── button/         # Button 컴포넌트
+│   ├── table/          # Table 컴포넌트들
+│   ├── skeleton/       # Skeleton 컴포넌트들
+│   ├── ui/             # shadcn/ui 기본 컴포넌트
+│   ├── sidebar/        # 사이드바 컴포넌트
+│   └── ...
+├── pages/              # 페이지 컴포넌트
+│   ├── components/     # 컴포넌트 실습 페이지
+│   │   ├── button/
+│   │   ├── table/
+│   │   ├── skeleton/
+│   │   └── sonner/
+│   └── changelog/      # 변경사항 페이지
+├── common/             # 공통 레이아웃
+├── contexts/           # React Context
+├── hooks/              # Custom Hooks
+├── lib/                # 유틸리티 함수
+├── routes/             # 라우팅 설정
+└── global/             # 전역 타입 정의
+```
+
+## 🎯 구현된 컴포넌트
+
+### Button
+- 다양한 variant (default, destructive, outline, secondary, ghost, link)
+- 여러 크기 옵션
+- 아이콘 버튼
+- 버튼 그룹
+
+### Table
+- 기본 테이블
+- 푸터가 있는 테이블
+- 배지가 있는 테이블
+- 액션 메뉴가 있는 테이블
+- 체크박스 선택 테이블
+- 검색 및 필터링 테이블
+- TanStack Table 기반 고급 데이터 테이블 (정렬, 필터링, 페이지네이션)
+
+### Skeleton
+- 아바타 스켈레톤
+- 카드 스켈레톤
+- 폼 스켈레톤
+- 테이블 스켈레톤
+- 텍스트 스켈레톤
+
+### Sonner
+- 다양한 타입의 Toast 알림 (success, error, info, warning)
+- 위치 커스터마이징
+- 액션 버튼
+- Promise 기반 알림
+
+## 🎨 주요 기능
+
+### 다크 모드
+- 시스템 설정 자동 감지
+- 수동 테마 전환
+- 테마 설정 로컬 스토리지 저장
+
+### 반응형 디자인
+- 모바일 우선 설계
+- 반응형 사이드바
+- 모바일/데스크톱 최적화된 UI
+
+### 코드 스플리팅
+- Vite의 manualChunks를 통한 최적화된 번들 분할
+- 라이브러리별 청크 분리로 캐싱 최적화
+
+## 📝 변경사항
+
+프로젝트의 변경사항은 [Changelog 페이지](/changelog)에서 확인할 수 있습니다.
+
+## 🔗 유용한 링크
+
+- [shadcn/ui 공식 문서](https://ui.shadcn.com)
+- [React 공식 문서](https://react.dev)
+- [Tailwind CSS 공식 문서](https://tailwindcss.com)
+- [Vite 공식 문서](https://vite.dev)
+- [TanStack Table 공식 문서](https://tanstack.com/table)
+
+## 📄 라이선스
+
+이 프로젝트는 학습 목적으로 제작되었습니다.
