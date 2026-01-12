@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { changelogData } from './changelog-data';
@@ -11,7 +11,7 @@ const ChangelogPage = () => {
   // 각 버전의 열림 상태를 독립적으로 관리
   const [openVersions, setOpenVersions] = useState<Set<number>>(new Set());
 
-  const toggleVersion = (index: number) => {
+  const toggleVersion = useCallback((index: number) => {
     setOpenVersions(prev => {
       const newSet = new Set(prev);
       if (newSet.has(index)) {
@@ -21,7 +21,7 @@ const ChangelogPage = () => {
       }
       return newSet;
     });
-  };
+  }, []);
 
   return (
     <ComponentsLayout>

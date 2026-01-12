@@ -1,31 +1,33 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Code, Zap } from 'lucide-react';
+import { useMemo, memo } from 'react';
 
 import { Button } from '@/components/ui/button';
 import ComponentsLayout from '@/pages/components/layout';
 import { componentsData } from '@/pages/components/components-data';
 
+// Features 데이터를 컴포넌트 외부로 이동하여 재생성 방지
+const features = [
+  {
+    title: '컴포넌트 기반',
+    description: '재사용 가능한 UI 컴포넌트로 빠르게 개발',
+    icon: Code,
+  },
+  {
+    title: '접근성',
+    description: 'ARIA 표준을 준수하는 접근 가능한 컴포넌트',
+    icon: Sparkles,
+  },
+  {
+    title: '커스터마이징',
+    description: 'Tailwind CSS로 자유롭게 스타일링',
+    icon: Zap,
+  },
+] as const;
+
 const HomePage = () => {
   // 홈페이지에는 최신 2개만 표시
-  const components = componentsData.slice(0, 2);
-
-  const features = [
-    {
-      title: '컴포넌트 기반',
-      description: '재사용 가능한 UI 컴포넌트로 빠르게 개발',
-      icon: Code,
-    },
-    {
-      title: '접근성',
-      description: 'ARIA 표준을 준수하는 접근 가능한 컴포넌트',
-      icon: Sparkles,
-    },
-    {
-      title: '커스터마이징',
-      description: 'Tailwind CSS로 자유롭게 스타일링',
-      icon: Zap,
-    },
-  ];
+  const components = useMemo(() => componentsData.slice(0, 2), []);
 
   return (
     <ComponentsLayout>

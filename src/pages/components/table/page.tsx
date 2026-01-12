@@ -9,6 +9,7 @@ import TableWithSelect from '@/components/table/TableWithSelect';
 import TableWithInput from '@/components/table/TableWithInput';
 import DataTable from '@/components/table/DataTable';
 
+// invoices 데이터를 컴포넌트 외부로 이동하여 재생성 방지
 const invoices = [
   {
     invoice: 'INV001',

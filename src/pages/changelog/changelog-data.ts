@@ -9,9 +9,31 @@ export interface ChangelogRelease {
 
 export const changelogData: ChangelogRelease[] = [
   {
+    version: '1.1.0',
+    date: '2025-01-16',
+    isLatest: true,
+    content: `## 주요 변경사항
+
+### 반응형 개선
+* **테이블 페이지 반응형**: 각 테이블이 페이지 너비를 넘어갈 때 좌우 스크롤이 가능하도록 개선
+* **Changelog 페이지 반응형**: 작은 화면에서도 날짜와 버전 정보가 잘 보이도록 레이아웃 최적화
+* **테이블 컨테이너 개선**: ComponentContainer에 overflow-x-auto 추가하여 테이블 스크롤 기능 개선
+
+### 개선사항
+* **Header 표시 로직**: Header가 component 하위 페이지(button, table, skeleton 등)에서만 표시되도록 수정
+* **DataTable 컴포넌트 구조**: DataTable을 ComponentContainer로 감싸서 다른 테이블 컴포넌트와 일관된 구조로 변경
+* **코드 스플리팅**: Vite 빌드 최적화를 위해 큰 라이브러리들을 별도 청크로 분리하는 설정 추가
+* **README 문서화**: 프로젝트 소개, 설치 방법, 기술 스택 등 상세한 README 작성
+
+### 버그 수정
+* 테이블이 페이지 너비를 넘어가도 스크롤이 생기지 않던 문제 수정
+* changelog 페이지에서 잘못된 클래스명(w-2xl) 제거
+* 모바일에서 날짜 정보가 숨겨지던 문제 수정`,
+    contributors: ['shadcn-study'],
+  },
+  {
     version: '1.0.0',
     date: '2025-01-15',
-    isLatest: true,
     content: `
 ## 주요 변경사항
 ### 새로운 기능
@@ -31,7 +53,7 @@ export const changelogData: ChangelogRelease[] = [
     contributors: ['shadcn-study'],
   },
   {
-    version: '0.9.0',
+    version: '0.3.0',
     date: '2025-01-10',
     content: `## 주요 변경사항
 
@@ -44,7 +66,7 @@ export const changelogData: ChangelogRelease[] = [
 * 사이드바 UI 개선`,
   },
   {
-    version: '0.8.0',
+    version: '0.2.0',
     date: '2025-01-05',
     content: `## 주요 변경사항
 

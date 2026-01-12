@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Search, Grid3x3, List } from 'lucide-react';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback, memo } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { componentsData, type ComponentInfo } from './components-data';
@@ -18,17 +18,31 @@ const ComponentsPage = () => {
 
   // 필터링된 컴포넌트 목록
   const filteredComponents = useMemo(() => {
+    const queryLower = searchQuery.toLowerCase();
     return componentsData.filter(component => {
       const matchesSearch =
-        component.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        component.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        component.tags?.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+        component.name.toLowerCase().includes(queryLower) ||
+        component.description.toLowerCase().includes(queryLower) ||
+        component.tags?.some(tag => tag.toLowerCase().includes(queryLower));
 
       const matchesCategory = selectedCategory === 'all' || component.category === selectedCategory;
 
       return matchesSearch && matchesCategory;
     });
   }, [searchQuery, selectedCategory]);
+
+  // 핸들러 메모이제이션
+  const handleCategoryChange = useCallback((category: string) => {
+    setSelectedCategory(category);
+  }, []);
+
+  const handleViewModeChange = useCallback((mode: 'grid' | 'list') => {
+    setViewMode(mode);
+  }, []);
+
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  }, []);
 
   return (
     <div className="min-h-screen pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
@@ -50,7 +64,7 @@ const ComponentsPage = () => {
               type="text"
               placeholder="컴포넌트 이름, 설명, 태그로 검색..."
               value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
+              onChange={handleSearchChange}
               className="pl-10"
             />
           </div>
@@ -65,7 +79,7 @@ const ComponentsPage = () => {
                   variant={selectedCategory === category ? 'default' : 'outline'}
                   size="sm"
                   className="text-xs sm:text-sm"
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                 >
                   {category === 'all' ? '전체' : category}
                 </Button>
@@ -76,14 +90,14 @@ const ComponentsPage = () => {
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'outline'}
                 size="sm"
-                onClick={() => setViewMode('grid')}
+                onClick={() => handleViewModeChange('grid')}
               >
                 <Grid3x3 className="size-3 sm:size-4" />
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'outline'}
                 size="sm"
-                onClick={() => setViewMode('list')}
+                onClick={() => handleViewModeChange('list')}
               >
                 <List className="size-3 sm:size-4" />
               </Button>
@@ -134,7 +148,7 @@ interface ComponentCardProps {
   viewMode: 'grid' | 'list';
 }
 
-const ComponentCard = ({ component, Icon, viewMode }: ComponentCardProps) => {
+const ComponentCard = memo(({ component, Icon, viewMode }: ComponentCardProps) => {
   if (viewMode === 'list') {
     return (
       <Link
@@ -214,8 +228,10 @@ const ComponentCard = ({ component, Icon, viewMode }: ComponentCardProps) => {
           )}
         </div>
       </div>
-    </Link>
+      </Link>
   );
-};
+});
+
+ComponentCard.displayName = 'ComponentCard';
 
 export default ComponentsPage;
