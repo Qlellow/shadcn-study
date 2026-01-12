@@ -4,7 +4,7 @@ import SkeletonText from '@/components/skeleton/SkeletonText';
 import SkeletonCard from '@/components/skeleton/SkeletonCard';
 import SkeletonTable from '@/components/skeleton/SkeletonTable';
 import ComponentsLayout from '@/pages/components/layout';
-import ComponentWrapper from '@/components/ComponentWrapper/CompnentWrapper';
+import ComponentWrapper from '@/components/ComponentWrapper/ComponentWrapper';
 
 const SkeletonPage = () => {
   return (

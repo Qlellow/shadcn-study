@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
   const isComponents = location.pathname === '/components';
 
   useEffect(() => {
@@ -23,12 +22,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <main className="w-full flex min-h-svh flex-col items-center gap-6 bg-background text-foreground">
+        <main className="w-full flex min-h-svh flex-col items-center gap-6 bg-background text-foreground overflow-x-hidden">
           {/* 모바일 사이드바 트리거 버튼 */}
           <div className="fixed top-4 left-4 z-50 md:hidden">
             <SidebarTrigger />
           </div>
-          {!isHome && !isComponents && (
+          {!isComponents && (
             <>
               <Header />
               {/* Header가 고정되어 있으므로 공간 확보 */}

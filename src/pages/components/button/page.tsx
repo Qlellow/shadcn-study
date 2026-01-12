@@ -9,10 +9,10 @@ import { ArrowUpRightIcon } from 'lucide-react';
 const ButtonPage = () => {
   return (
     <ComponentsLayout>
-      <div className="flex flex-col gap-8 justify-center h-full">
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-8 justify-center h-full w-full min-w-0 max-w-full px-4 lg:w-fit sm:px-6">
+        <div className="flex flex-col gap-2 w-full min-w-0">
           <h2 className="text-2xl font-bold">Button Size</h2>
-          <div className="flex flex-row gap-8 justify-center">
+          <div className="flex flex-row flex-wrap gap-4 sm:gap-8 justify-center w-full">
             {/* Small */}
             <div className="flex flex-row gap-2">
               <Button size="sm" variant="outline">
@@ -50,9 +50,9 @@ const ButtonPage = () => {
 
         <hr className="w-full border-t border-gray-200 dark:border-gray-800" />
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-full min-w-0">
           <h2 className="text-2xl font-bold">Button Variant</h2>
-          <div className="flex flex-row gap-8 justify-center">
+          <div className="flex flex-row flex-wrap gap-4 sm:gap-8 justify-center w-full">
             <Button variant="outline">Outline</Button>
             <Button variant="secondary">Secondary</Button>
             <Button variant="ghost">Ghost</Button>
@@ -63,9 +63,9 @@ const ButtonPage = () => {
 
         <hr className="w-full border-t border-gray-200 dark:border-gray-800" />
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-full min-w-0">
           <h2 className="text-2xl font-bold">Button Sidebar</h2>
-          <div className="flex flex-row gap-8 justify-center">
+          <div className="flex flex-row flex-wrap gap-4 sm:gap-8 justify-center w-full">
             <Button variant="outline" size="sm">
               <IconGitBranch /> New Branch
             </Button>
@@ -74,9 +74,9 @@ const ButtonPage = () => {
 
         <hr className="w-full border-t border-gray-200 dark:border-gray-800" />
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 w-full min-w-0">
           <h2 className="text-2xl font-bold">Button Disabled and Spinner</h2>
-          <div className="flex flex-row gap-8 justify-center">
+          <div className="flex flex-row flex-wrap gap-4 sm:gap-8 justify-center w-full">
             <Button size="sm" variant="outline" disabled>
               <Spinner />
               Submit

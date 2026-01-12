@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import ComponentContainer from '@/components/ComponentWrapper/Compnent';
+import ComponentContainer from '@/components/ComponentWrapper/Component';
 
 const TableWithBadges = () => {
   return (

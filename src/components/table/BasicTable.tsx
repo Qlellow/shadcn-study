@@ -4,7 +4,7 @@ import { TableHead } from '../ui/table';
 import { TableBody } from '../ui/table';
 import { TableCaption } from '../ui/table';
 import { TableHeader } from '../ui/table';
-import ComponentContainer from '@/components/ComponentWrapper/Compnent';
+import ComponentContainer from '@/components/ComponentWrapper/Component';
 
 import type { TableProps } from '@/global/types';
 

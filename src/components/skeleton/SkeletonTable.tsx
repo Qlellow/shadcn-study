@@ -1,4 +1,4 @@
-import ComponentContainer from '@/components/ComponentWrapper/Compnent';
+import ComponentContainer from '@/components/ComponentWrapper/Component';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const SkeletonTable = () => {

@@ -1,5 +1,5 @@
 import ComponentsLayout from '@/pages/components/layout';
-import ComponentWrapper from '@/components/ComponentWrapper/CompnentWrapper';
+import ComponentWrapper from '@/components/ComponentWrapper/ComponentWrapper';
 import BasicTable from '@/components/table/BasicTable';
 import TableWithFooter from '@/components/table/TableWithFooter';
 import SimpleTable from '@/components/table/SimpleTable';
