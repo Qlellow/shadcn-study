@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Code, Zap } from 'lucide-react';
-import { useMemo, memo } from 'react';
+import { useMemo } from 'react';
 
 import { Button } from '@/components/ui/button';
 import ComponentsLayout from '@/pages/components/layout';

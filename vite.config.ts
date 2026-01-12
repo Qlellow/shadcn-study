@@ -52,6 +52,11 @@ export default defineConfig({
             return 'icons-vendor';
           }
 
+          // Vercel Analytics를 별도 청크로 분리
+          if (id.includes('node_modules/@vercel/analytics')) {
+            return 'analytics-vendor';
+          }
+
           // 나머지 node_modules를 vendor 청크로 분리
           if (id.includes('node_modules')) {
             return 'vendor';
