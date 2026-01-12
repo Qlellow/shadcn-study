@@ -7,11 +7,11 @@ export interface ChangelogRelease {
   contributors?: string[];
 }
 
-export const changelogData: ChangelogRelease[] = [
+// raw changelog data (isLatest 제외)
+const rawChangelogData: Omit<ChangelogRelease, 'isLatest'>[] = [
   {
     version: '1.2.0',
     date: '2025-01-16',
-    isLatest: true,
     content: `## 주요 변경사항
 
 ### 성능 최적화
@@ -118,3 +118,9 @@ export const changelogData: ChangelogRelease[] = [
 * **홈페이지**: 프로젝트 소개 및 컴포넌트 둘러보기 페이지`,
   },
 ];
+
+// 첫 번째 항목에만 자동으로 isLatest: true 추가
+export const changelogData: ChangelogRelease[] = rawChangelogData.map((release, index) => ({
+  ...release,
+  isLatest: index === 0,
+}));
