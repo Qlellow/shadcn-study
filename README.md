@@ -150,10 +150,6 @@ src/
 - Vite의 manualChunks를 통한 최적화된 번들 분할
 - 라이브러리별 청크 분리로 캐싱 최적화
 
-## 📝 변경사항
-
-프로젝트의 변경사항은 [Changelog 페이지](/changelog)에서 확인할 수 있습니다.
-
 ## 🔗 유용한 링크
 
 - [shadcn/ui 공식 문서](https://ui.shadcn.com)
