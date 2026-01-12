@@ -5,11 +5,16 @@ import type { LayoutProps } from '@/global/types';
 import Header from '@/components/Header';
 import { useLocation } from 'react-router-dom';
 import ModeToggle from '@/pages/components/ModeToggle';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
+import { componentsData } from '@/pages/components/components-data';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
-  const isComponents = location.pathname === '/components';
+
+  // component 하위 페이지인지 확인 (componentsData에 있는 경로만)
+  const isComponentPage = useMemo(() => {
+    return componentsData.some(comp => comp.path === location.pathname);
+  }, [location.pathname]);
 
   useEffect(() => {
     // 라우트 변경 시 스크롤을 맨 위로
@@ -27,7 +32,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="fixed top-4 left-4 z-50 md:hidden">
             <SidebarTrigger />
           </div>
-          {!isComponents && (
+          {isComponentPage && (
             <>
               <Header />
               {/* Header가 고정되어 있으므로 공간 확보 */}
