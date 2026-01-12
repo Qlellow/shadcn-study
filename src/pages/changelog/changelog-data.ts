@@ -38,7 +38,6 @@ export const changelogData: ChangelogRelease[] = [
   {
     version: '1.1.0',
     date: '2025-01-16',
-    isLatest: true,
     content: `## 주요 변경사항
 
 ### 반응형 개선
