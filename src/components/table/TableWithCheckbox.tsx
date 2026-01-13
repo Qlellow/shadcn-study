@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import ComponentContainer from '@/components/ComponentWrapper/Component';
+import { ComponentContainer } from '@/components/ComponentWrapper';
 import type { TableProps } from '@/global/types';
 
 export const TableWithCheckbox: React.FC<TableProps> = ({ invoices }) => {

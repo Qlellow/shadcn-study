@@ -2,7 +2,7 @@ import { CardContent, CardHeader } from '@/components/ui/card';
 
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import ComponentContainer from '@/components/ComponentWrapper/Component';
+import { ComponentContainer } from '@/components/ComponentWrapper';
 
 export const SkeletonCard = () => {
   return (

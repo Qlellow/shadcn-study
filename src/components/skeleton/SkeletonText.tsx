@@ -1,5 +1,5 @@
 import { Skeleton } from '@/components/ui/skeleton';
-import ComponentContainer from '@/components/ComponentWrapper/Component';
+import { ComponentContainer } from '@/components/ComponentWrapper';
 
 export const SkeletonText = () => {
   return (

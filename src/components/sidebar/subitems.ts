@@ -1,4 +1,4 @@
-import { Bell, Loader2, MousePointer2, Table2 } from 'lucide-react';
+import { Bell, LayoutGrid, Loader2, MousePointer2, Table2 } from 'lucide-react';
 
 export const componentsSubItems = [
   {
@@ -20,5 +20,10 @@ export const componentsSubItems = [
     title: 'Skeleton',
     url: '/components/skeleton',
     icon: Loader2,
+  },
+  {
+    title: 'Carousel',
+    url: '/components/carousel',
+    icon: LayoutGrid,
   },
 ];

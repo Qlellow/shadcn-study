@@ -15,7 +15,9 @@ const Header = () => {
 
   // 사이드바가 접혔는지 확인
   const isCollapsed = state === 'collapsed' && !isMobile;
-  const sidebarWidth = isCollapsed ? 'var(--sidebar-width-icon,3rem)' : 'var(--sidebar-width,14.5rem)';
+  const sidebarWidth = isCollapsed
+    ? 'var(--sidebar-width-icon,3rem)'
+    : 'var(--sidebar-width,14.5rem)';
 
   return (
     <header

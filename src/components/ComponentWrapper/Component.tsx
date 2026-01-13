@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-const ComponentContainer = ({
+export const ComponentContainer = ({
   title,
   children,
   className,
@@ -14,7 +14,7 @@ const ComponentContainer = ({
     <div
       data-slot="component"
       className={cn(
-        'mx-auto flex w-full max-w-lg min-w-0 flex-col gap-1 self-stretch lg:max-w-none',
+        'mx-auto flex w-full max-w-lg min-w-0 flex-col gap-1 self-stretch lg:max-w-none select-none',
         containerClassName
       )}
       {...props}
@@ -23,7 +23,7 @@ const ComponentContainer = ({
       <div
         data-slot="component-wrapper"
         className={cn(
-          "bg-background text-foreground flex min-w-0 flex-1 flex-col items-start gap-6 border border-dashed rounded-md p-4 sm:p-6 *:[div:not([class*='w-'])]:w-full",
+          "bg-background text-foreground flex min-w-0 flex-1 flex-col items-start gap-6 border border-dashed rounded-md sm:p-6 *:[div:not([class*='w-'])]:w-full",
           className
         )}
       >
@@ -32,5 +32,3 @@ const ComponentContainer = ({
     </div>
   );
 };
-
-export default ComponentContainer;

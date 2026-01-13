@@ -12,6 +12,7 @@ const SonnerPage = lazy(() => import('@/pages/components/sonner/page'));
 const TablePage = lazy(() => import('@/pages/components/table/page'));
 const ButtonPage = lazy(() => import('@/pages/components/button/page'));
 const SkeletonPage = lazy(() => import('@/pages/components/skeleton/page'));
+const CarouselPage = lazy(() => import('@/pages/components/carousel/page'));
 const ChangelogPage = lazy(() => import('@/pages/changelog/page'));
 
 // Loading fallback component
@@ -33,6 +34,7 @@ const AppRouter = () => {
           <Route path="/components/sonner" element={<Layout children={<SonnerPage />} />} />
           <Route path="/components/table" element={<Layout children={<TablePage />} />} />
           <Route path="/components/skeleton" element={<Layout children={<SkeletonPage />} />} />
+          <Route path="/components/carousel" element={<Layout children={<CarouselPage />} />} />
           <Route path="/changelog" element={<Layout children={<ChangelogPage />} />} />
         </Routes>
       </Suspense>

@@ -1,4 +1,4 @@
-import { Table2, Bell, type LucideIcon, MousePointer2, Loader2 } from 'lucide-react';
+import { Table2, Bell, type LucideIcon, MousePointer2, Loader2, LayoutGrid } from 'lucide-react';
 
 export interface ComponentInfo {
   name: string;
@@ -51,5 +51,14 @@ export const componentsData: ComponentInfo[] = [
     color: 'text-yellow-500',
     category: 'Loading',
     tags: ['skeleton', 'loading', 'placeholder'],
+  },
+  {
+    name: 'Carousel',
+    description: 'Carousel 컴포넌트 실습. 이미지 슬라이드를 표시할 수 있습니다.',
+    path: '/components/carousel',
+    icon: LayoutGrid,
+    color: 'text-red-500',
+    category: 'Data Display',
+    tags: ['carousel', 'slider', 'image'],
   },
 ];
