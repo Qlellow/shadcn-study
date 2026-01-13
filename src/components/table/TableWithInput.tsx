@@ -9,7 +9,7 @@ import {
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 import { Input } from '@/components/ui/input';
 
-const TableWithInput = () => {
+export const TableWithInput = () => {
   return (
     <ComponentContainer title="With Input">
       <Table>
@@ -47,5 +47,3 @@ const TableWithInput = () => {
     </ComponentContainer>
   );
 };
-
-export default TableWithInput;

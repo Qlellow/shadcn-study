@@ -1,0 +1,9 @@
+export { BasicTable } from '@/components/table/BasicTable';
+export { DataTable } from '@/components/table/DataTable';
+export { SimpleTable } from '@/components/table/SimpleTable';
+export { TableWithActions } from '@/components/table/TableWithActions';
+export { TableWithBadges } from '@/components/table/TableWithBadges';
+export { TableWithCheckbox } from '@/components/table/TableWithCheckbox';
+export { TableWithFooter } from '@/components/table/TableWithFooter';
+export { TableWithInput } from '@/components/table/TableWithInput';
+export { TableWithSelect } from '@/components/table/TableWithSelect';

@@ -9,7 +9,7 @@ import {
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 import type { TableProps } from '@/global/types';
 
-const TableWithCheckbox: React.FC<TableProps> = ({ invoices }) => {
+export const TableWithCheckbox: React.FC<TableProps> = ({ invoices }) => {
   return (
     <ComponentContainer title="With Checkbox">
       <Table>
@@ -34,5 +34,3 @@ const TableWithCheckbox: React.FC<TableProps> = ({ invoices }) => {
     </ComponentContainer>
   );
 };
-
-export default TableWithCheckbox;

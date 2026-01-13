@@ -17,7 +17,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { MoreHorizontal } from 'lucide-react';
 
-const TableWithActions = () => {
+export const TableWithActions = () => {
   return (
     <ComponentContainer title="With Actions">
       <Table>
@@ -94,5 +94,3 @@ const TableWithActions = () => {
     </ComponentContainer>
   );
 };
-
-export default TableWithActions;

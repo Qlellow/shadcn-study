@@ -67,7 +67,7 @@ const data: Payment[] = [
   },
 ];
 
-const DataTable = () => {
+export const DataTable = () => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
@@ -193,5 +193,3 @@ const DataTable = () => {
     </ComponentContainer>
   );
 };
-
-export default DataTable;

@@ -1,13 +1,15 @@
 import ComponentsLayout from '@/pages/components/layout';
 import ComponentWrapper from '@/components/ComponentWrapper/ComponentWrapper';
-import BasicTable from '@/components/table/BasicTable';
-import TableWithFooter from '@/components/table/TableWithFooter';
-import SimpleTable from '@/components/table/SimpleTable';
-import TableWithBadges from '@/components/table/TableWithBadges';
-import TableWithActions from '@/components/table/TableWithActions';
-import TableWithSelect from '@/components/table/TableWithSelect';
-import TableWithInput from '@/components/table/TableWithInput';
-import DataTable from '@/components/table/DataTable';
+import {
+  BasicTable,
+  TableWithFooter,
+  SimpleTable,
+  TableWithBadges,
+  TableWithActions,
+  TableWithSelect,
+  TableWithInput,
+  DataTable,
+} from '@/components/table';
 
 // invoices 데이터를 컴포넌트 외부로 이동하여 재생성 방지
 const invoices = [

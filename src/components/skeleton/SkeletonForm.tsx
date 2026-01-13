@@ -1,7 +1,7 @@
 import { Skeleton } from '@/components/ui/skeleton';
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 
-const SkeletonForm = () => {
+export const SkeletonForm = () => {
   return (
     <ComponentContainer title="Form">
       <div className="flex w-full flex-col gap-7">
@@ -18,5 +18,3 @@ const SkeletonForm = () => {
     </ComponentContainer>
   );
 };
-
-export default SkeletonForm;

@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 
-const SkeletonCard = () => {
+export const SkeletonCard = () => {
   return (
     <ComponentContainer title="Card">
       <Card className="w-full">
@@ -19,5 +19,3 @@ const SkeletonCard = () => {
     </ComponentContainer>
   );
 };
-
-export default SkeletonCard;

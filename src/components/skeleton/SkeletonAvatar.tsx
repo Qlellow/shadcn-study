@@ -1,7 +1,7 @@
 import { Skeleton } from '@/components/ui/skeleton';
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 
-const SkeletonAvatar = () => {
+export const SkeletonAvatar = () => {
   return (
     <ComponentContainer title="Avatar">
       <div className="flex w-full items-center gap-4">
@@ -14,5 +14,3 @@ const SkeletonAvatar = () => {
     </ComponentContainer>
   );
 };
-
-export default SkeletonAvatar;

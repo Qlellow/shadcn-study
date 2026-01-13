@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-const TableWithSelect = () => {
+export const TableWithSelect = () => {
   return (
     <ComponentContainer title="With Select">
       <Table>
@@ -90,5 +90,3 @@ const TableWithSelect = () => {
     </ComponentContainer>
   );
 };
-
-export default TableWithSelect;

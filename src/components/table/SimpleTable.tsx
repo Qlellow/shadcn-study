@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/table';
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 
-const SimpleTable = () => {
+export const SimpleTable = () => {
   return (
     <ComponentContainer title="Simple">
       <Table>
@@ -40,5 +40,3 @@ const SimpleTable = () => {
     </ComponentContainer>
   );
 };
-
-export default SimpleTable;

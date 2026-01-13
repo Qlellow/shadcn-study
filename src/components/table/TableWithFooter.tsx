@@ -11,7 +11,7 @@ import {
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 import type { TableProps } from '@/global/types';
 
-const TableWithFooter: React.FC<TableProps> = ({ invoices }) => {
+export const TableWithFooter: React.FC<TableProps> = ({ invoices }) => {
   return (
     <ComponentContainer title="With Footer">
       <Table>
@@ -44,5 +44,3 @@ const TableWithFooter: React.FC<TableProps> = ({ invoices }) => {
     </ComponentContainer>
   );
 };
-
-export default TableWithFooter;

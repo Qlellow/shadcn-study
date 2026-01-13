@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/table';
 import ComponentContainer from '@/components/ComponentWrapper/Component';
 
-const TableWithBadges = () => {
+export const TableWithBadges = () => {
   return (
     <ComponentContainer title="With Badges">
       <Table>
@@ -64,5 +64,3 @@ const TableWithBadges = () => {
     </ComponentContainer>
   );
 };
-
-export default TableWithBadges;

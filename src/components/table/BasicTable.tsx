@@ -8,7 +8,7 @@ import ComponentContainer from '@/components/ComponentWrapper/Component';
 
 import type { TableProps } from '@/global/types';
 
-const BasicTable: React.FC<TableProps> = ({ invoices }) => {
+export const BasicTable: React.FC<TableProps> = ({ invoices }) => {
   return (
     <ComponentContainer title="Basic">
       <Table>
@@ -35,5 +35,3 @@ const BasicTable: React.FC<TableProps> = ({ invoices }) => {
     </ComponentContainer>
   );
 };
-
-export default BasicTable;
