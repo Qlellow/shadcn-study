@@ -10,7 +10,8 @@ shadcn/ui 라이브러리를 학습하고 실습하는 개인 프로젝트입니
 
 ## ✨ 주요 기능
 
-- 🎨 **다양한 컴포넌트 실습**: Button, Table, Skeleton, Sonner 등
+- 🎨 **다양한 컴포넌트 실습**: Button, Table, Skeleton, Sonner, Carousel 등
+- 🎠 **고급 캐러셀 기능**: 다양한 애니메이션 효과와 자동 재생 기능
 - 🌓 **다크 모드 지원**: 시스템 설정 자동 감지 및 수동 전환
 - 📱 **반응형 디자인**: 모바일, 태블릿, 데스크톱 최적화
 - 🚀 **빠른 개발 환경**: Vite + React SWC로 빠른 HMR
@@ -29,6 +30,7 @@ shadcn/ui 라이브러리를 학습하고 실습하는 개인 프로젝트입니
 - **shadcn/ui** - 컴포넌트 라이브러리
 - **Radix UI** - 접근성 있는 프리미티브 컴포넌트
 - **TanStack Table** - 강력한 테이블 라이브러리
+- **Embla Carousel** - 유연하고 성능이 뛰어난 캐러셀 라이브러리
 - **React Router** 7.12.0 - 클라이언트 사이드 라우팅
 - **Sonner** - Toast 알림 컴포넌트
 - **React Markdown** - Markdown 렌더링
@@ -86,6 +88,10 @@ src/
 │   ├── button/         # Button 컴포넌트
 │   ├── table/          # Table 컴포넌트들
 │   ├── skeleton/       # Skeleton 컴포넌트들
+│   ├── carousel/       # Carousel 컴포넌트들
+│   │   ├── Basic/      # 기본 캐러셀
+│   │   ├── Auto/       # 자동 재생 캐러셀
+│   │   └── Animation/  # 애니메이션 캐러셀
 │   ├── ui/             # shadcn/ui 기본 컴포넌트
 │   ├── sidebar/        # 사이드바 컴포넌트
 │   └── ...
@@ -94,7 +100,8 @@ src/
 │   │   ├── button/
 │   │   ├── table/
 │   │   ├── skeleton/
-│   │   └── sonner/
+│   │   ├── sonner/
+│   │   └── carousel/
 │   └── changelog/      # 변경사항 페이지
 ├── common/             # 공통 레이아웃
 ├── contexts/           # React Context
@@ -134,6 +141,21 @@ src/
 - 액션 버튼
 - Promise 기반 알림
 
+### Carousel
+- **기본 캐러셀**: 기본 스크롤 및 네비게이션 기능
+- **Loop Carousel**: 무한 반복 캐러셀
+- **Variable Width Carousel**: 가변 너비 카드 캐러셀
+- **Drag Free Carousel**: 자유 드래그 캐러셀
+- **Y Axis Carousel**: 수직 방향 캐러셀
+- **Auto Play Carousel**: 자동 재생 캐러셀
+- **Auto Scroll Carousel**: 자동 스크롤 캐러셀
+- **Fade Carousel**: 페이드 전환 효과
+- **Parallax Carousel**: 패럴랙스 효과
+- **Scale Carousel**: 스케일 애니메이션 효과
+- **Opacity Carousel**: 투명도 애니메이션 효과
+- **ClassName Carousel**: 클래스 기반 스타일링
+- 모바일/데스크탑 반응형 네비게이션 버튼
+
 ## 🎨 주요 기능
 
 ### 다크 모드
@@ -145,6 +167,7 @@ src/
 - 모바일 우선 설계
 - 반응형 사이드바
 - 모바일/데스크톱 최적화된 UI
+- 캐러셀 네비게이션 버튼 반응형 위치 조정
 
 ### 코드 스플리팅
 - Vite의 manualChunks를 통한 최적화된 번들 분할
@@ -157,6 +180,7 @@ src/
 - [Tailwind CSS 공식 문서](https://tailwindcss.com)
 - [Vite 공식 문서](https://vite.dev)
 - [TanStack Table 공식 문서](https://tanstack.com/table)
+- [Embla Carousel 공식 문서](https://www.embla-carousel.com)
 
 ## 📄 라이선스
 
