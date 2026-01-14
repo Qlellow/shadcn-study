@@ -25,8 +25,8 @@ export const LoopCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:inline-flex" />
-        <CarouselNext className="hidden sm:inline-flex" />
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </ComponentContainer>
   );

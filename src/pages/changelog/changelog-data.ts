@@ -10,6 +10,16 @@ export interface ChangelogRelease {
 // raw changelog data (isLatest 제외)
 const rawChangelogData: Omit<ChangelogRelease, 'isLatest'>[] = [
   {
+    version: '1.3.1',
+    date: '2025-01-16',
+    content: `## 버그 수정
+
+### 캐러셀 개선
+* **모바일 버튼 표시**: 모바일에서도 캐러셀 네비게이션 버튼이 보이도록 수정
+* **버튼 위치 조정**: 모바일에서는 캐러셀 내부에, 데스크탑에서는 외부에 버튼이 표시되도록 반응형 위치 조정`,
+    contributors: ['shadcn-study'],
+  },
+  {
     version: '1.3.0',
     date: '2025-01-16',
     content: `## 주요 변경사항
