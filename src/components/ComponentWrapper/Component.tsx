@@ -23,7 +23,7 @@ export const ComponentContainer = ({
       <div
         data-slot="component-wrapper"
         className={cn(
-          "bg-background text-foreground flex min-w-0 flex-1 flex-col items-start gap-6 border border-dashed rounded-md sm:p-6 *:[div:not([class*='w-'])]:w-full",
+          "bg-background text-foreground flex min-w-0 p-4 flex-1 flex-col items-start gap-6 border border-dashed rounded-md sm:p-6 *:[div:not([class*='w-'])]:w-full",
           className
         )}
       >
