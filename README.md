@@ -154,7 +154,6 @@ src/
 - **Scale Carousel**: 스케일 애니메이션 효과
 - **Opacity Carousel**: 투명도 애니메이션 효과
 - **ClassName Carousel**: 클래스 기반 스타일링
-- 모바일/데스크탑 반응형 네비게이션 버튼
 
 ## 🎨 주요 기능
 
