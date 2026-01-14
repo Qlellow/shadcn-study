@@ -12,8 +12,10 @@ import {
 } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
 import * as I from '@/data';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const TWEEN_FACTOR_BASE = 0.3;
+const MOBILE_TWEEN_FACTOR_BASE = 0.2;
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
@@ -23,6 +25,9 @@ export const ScaleCarousel = () => {
   const [current, setCurrent] = useState(0);
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
+  const isMobile = useIsMobile();
+
+  const tweenFactorBase = isMobile ? MOBILE_TWEEN_FACTOR_BASE : TWEEN_FACTOR_BASE;
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map(slideNode => {
@@ -30,9 +35,12 @@ export const ScaleCarousel = () => {
     });
   }, []);
 
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
+  const setTweenFactor = useCallback(
+    (emblaApi: EmblaCarouselType) => {
+      tweenFactor.current = tweenFactorBase * emblaApi.scrollSnapList().length;
+    },
+    [tweenFactorBase]
+  );
 
   const tweenScale = useCallback((emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
     const engine = emblaApi.internalEngine();

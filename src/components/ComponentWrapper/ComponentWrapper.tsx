@@ -8,7 +8,7 @@ export const ComponentWrapper = ({
   return (
     <div className="bg-background w-full max-w-screen min-w-0">
       {title && (
-        <h2 className="text-2xl font-bold mx-auto sm:px-6 md:gap-8 lg:px-12 2xl:max-w-6xl">
+        <h2 className="text-2xl font-bold mx-auto px-4 sm:px-6 md:gap-8 lg:px-12 2xl:max-w-6xl">
           {title}
         </h2>
       )}

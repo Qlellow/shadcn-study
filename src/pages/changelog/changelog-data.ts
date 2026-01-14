@@ -10,6 +10,29 @@ export interface ChangelogRelease {
 // raw changelog data (isLatest 제외)
 const rawChangelogData: Omit<ChangelogRelease, 'isLatest'>[] = [
   {
+    version: '1.3.0',
+    date: '2025-01-16',
+    content: `## 주요 변경사항
+
+### 새로운 기능
+* **Loop Carousel**: 무한 반복되는 캐러셀 구현 (동일한 리스트가 연속적으로 반복)
+* **Variable Width Carousel**: 각 카드마다 랜덤 너비를 가지는 캐러셀 구현
+* **Fade Carousel**: 화살표 버튼 클릭 시 좌우 스크롤 대신 페이드 효과로 전환되는 캐러셀 구현
+* **Parallax Carousel**: 패럴랙스 효과를 적용한 캐러셀 구현
+* **Scale Carousel**: 스케일 애니메이션 효과를 적용한 캐러셀 구현
+* **Opacity Carousel**: 투명도 애니메이션 효과를 적용한 캐러셀 구현
+
+### 개선사항
+* **ClassName Carousel 개선**: 현재 표시 중인 캐러셀 아이템에 is-snapped 클래스 자동 적용
+* **애니메이션 캐러셀 일관성**: 모든 애니메이션 캐러셀 컴포넌트에 is-snapped 클래스 기능 통일
+* **캐러셀 페이지 반응형**: 캐러셀 페이지의 반응형 레이아웃 개선 및 모바일 최적화
+
+### 버그 수정
+* FadeCarousel의 페이드 효과가 제대로 작동하지 않던 문제 수정
+* 캐러셀 컴포넌트들의 반응형 스타일링 개선`,
+    contributors: ['shadcn-study'],
+  },
+  {
     version: '1.2.0',
     date: '2025-01-16',
     content: `## 주요 변경사항
